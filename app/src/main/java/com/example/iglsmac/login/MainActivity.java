@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private boolean _authorizingAccount(String email, String password){
-        if(email.equals("kcpmt2@gmail.com") && password.equals("cucumberandroid")){
+        if(email.equals("kcpmt2@gmail.com") && password.equals("123456")){
             return true;
         }
         return false;

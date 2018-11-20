@@ -3,7 +3,7 @@
     package="com.example.iglsmac.login">
 
     <instrumentation
-        android:name="cucumber.api.android.CucumberInstrumentation"
+        android:name="cucumber.api.android.Instrumentation"
         android:targetPackage="Login"/>
 
     <application
