@@ -8,9 +8,9 @@ android {
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        testApplicationId "com.example.iglsmac.login.test"
-        //testInstrumentationRunner "com.example.iglsmac.test.Instrumentation"
+        //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //testApplicationId "com.example.iglsmac.login.test"
+        testInstrumentationRunner "com.example.iglsmac.login.test.Instrumentation"
         //testInstrumentationRunner "com.example.iglsmac.login.test.CucumberRunner"
     }
 

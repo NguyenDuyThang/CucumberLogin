@@ -1,4 +1,4 @@
-package com.example.iglsmac.login;
+package com.example.iglsmac.login.test;
 
 import android.os.Bundle;
 import android.support.test.runner.MonitoringInstrumentation;
