@@ -17,6 +17,7 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static android.support.test.espresso.action.ViewActions.typeText;
 import static android.support.test.espresso.action.ViewActions.click;
 
@@ -52,13 +53,13 @@ public class MainActivitySteps {
     @When("I enter email {string}")
     public void i_enter_email(String email) {
         this.email = email;
-        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editEmail)).perform(typeText(email));
+        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editEmail)).perform(typeText(email), closeSoftKeyboard());
     }
 
     @When("I enter password {string}")
     public void i_enter_password(String password){
         this.password = password;
-        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editPassword)).perform(typeText(password));
+        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editPassword)).perform(typeText(password), closeSoftKeyboard());
     }
 
     @When(("I press button login"))

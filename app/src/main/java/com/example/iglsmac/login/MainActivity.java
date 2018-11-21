@@ -29,9 +29,10 @@ public class MainActivity extends AppCompatActivity {
                 String password = editPassword.getText().toString();
 
                 if(_authorizingAccount(email, password)){
-                    Intent goToDashboard = new Intent(MainActivity.this, Dashboard.class);
+                    //Intent goToDashboard = new Intent(MainActivity.this, Dashboard.class);
 
-                    MainActivity.this.startActivity(goToDashboard);
+                    //MainActivity.this.startActivity(goToDashboard);
+                    Toast.makeText(MainActivity.this, "Login successsfully!", Toast.LENGTH_SHORT).show();
                 }
                 else{
                     Toast.makeText(MainActivity.this, "Incorrect email or password, try again!", Toast.LENGTH_SHORT).show();
