@@ -6,12 +6,17 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     private Button btnLogin = null;
     private EditText editEmail = null;
     private EditText editPassword = null;
+    private TextView subAnnounceText = null;
+    private TextView announceText = null;
+    private String[] emailArray = {"kcpm@gmail.com", "hoami@gmail.com"};
+    private String[] passwordArray = {"qwerty", "hoami"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +26,10 @@ public class MainActivity extends AppCompatActivity {
         this.btnLogin = (Button)this.findViewById(R.id.btnLogin);
         this.editEmail = (EditText)this.findViewById(R.id.editEmail);
         this.editPassword = (EditText)this.findViewById(R.id.editPassword);
+        this.subAnnounceText = (TextView)this.findViewById(R.id.subAnnounceText);
+        this.announceText = (TextView)this.findViewById(R.id.announceText);
+        this.subAnnounceText.setText("");
+        this.announceText.setText("");
 
         this.btnLogin.setOnClickListener(new Button.OnClickListener(){
             @Override
@@ -28,21 +37,27 @@ public class MainActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString();
                 String password = editPassword.getText().toString();
 
+                subAnnounceText.setText("Login ");
                 if(_authorizingAccount(email, password)){
-                    //Intent goToDashboard = new Intent(MainActivity.this, Dashboard.class);
-
-                    //MainActivity.this.startActivity(goToDashboard);
-                    Toast.makeText(MainActivity.this, "Login successsfully!", Toast.LENGTH_SHORT).show();
+                    announceText.setText("Success");
                 }
                 else{
-                    Toast.makeText(MainActivity.this, "Incorrect email or password, try again!", Toast.LENGTH_SHORT).show();
+                    announceText.setText("Fail");
                 }
             }
         });
     }
 
     private boolean _authorizingAccount(String email, String password){
-        if(email.equals("kcpm@gmail.com") && password.equals("qwerty")){
+        Boolean existed = false;
+        for(int i = 0;i < this.emailArray.length; i++){
+            if(this.emailArray[i].equals(email) && this.passwordArray[i].equals(password)){
+                existed = true;
+                break;
+            }
+        }
+
+        if(existed){
             return true;
         }
         return false;
