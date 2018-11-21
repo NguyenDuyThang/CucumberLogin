@@ -1,8 +1,15 @@
 Feature: User logins
   User uses email and password to login
 
-  Scenario: Enter correct email, correct password and press login
-    When I enter email "kcpm@gmail.com"
-    And I enter password "qwerty"
+  (@login-feature)
+  Scenario Outline: Enter correct email, correct password and press login
+    When I enter email "<email>"
+    And I enter password "<password>"
     And I press button login
-    Then I should be told "Success"
+    Then I should be told "<answer>"
+
+    Examples:
+    | email | password | answer |
+    | kcpm@gmail.com | qwerty | Success |
+    | hoami@gmail.com | hoami | Success |
+    | ecec@gmail.com  | ecec  | Fail    |
