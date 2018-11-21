@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView announceText = null;
     private String[] emailArray = {"kcpm@gmail.com", "hoami@gmail.com"};
     private String[] passwordArray = {"qwerty", "hoami"};
+    //Những account nào không có trong mảng này => Fail (vd như ecec@gmail.com bên file .feature)
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
