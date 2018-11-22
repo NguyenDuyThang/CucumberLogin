@@ -13,7 +13,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btnLogin = null;
     private EditText editEmail = null;
     private EditText editPassword = null;
-    private TextView subAnnounceText = null;
     private TextView announceText = null;
     private String[] emailArray = {"kcpm@gmail.com", "hoami@gmail.com"};
     private String[] passwordArray = {"qwerty", "hoami"};
@@ -27,9 +26,7 @@ public class MainActivity extends AppCompatActivity {
         this.btnLogin = (Button)this.findViewById(R.id.btnLogin);
         this.editEmail = (EditText)this.findViewById(R.id.editEmail);
         this.editPassword = (EditText)this.findViewById(R.id.editPassword);
-        this.subAnnounceText = (TextView)this.findViewById(R.id.subAnnounceText);
         this.announceText = (TextView)this.findViewById(R.id.announceText);
-        this.subAnnounceText.setText("");
         this.announceText.setText("");
 
         this.btnLogin.setOnClickListener(new Button.OnClickListener(){
@@ -48,12 +45,11 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
 
-                subAnnounceText.setText("Login ");
                 if(_authorizingAccount(email, password)){
-                    announceText.setText("Success");
+                    announceText.setText("Login success");
                 }
                 else{
-                    announceText.setText("Fail");
+                    announceText.setText("Login fail");
                 }
             }
         });

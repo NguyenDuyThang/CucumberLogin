@@ -82,34 +82,20 @@
 
     <TextView
         android:id="@+id/announceText"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="207dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="88dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
-        android:textAlignment="viewStart"
+        android:layout_marginEnd="88dp"
+        android:layout_marginBottom="48dp"
+        android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/editEmail"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.66"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
-
-    <TextView
-        android:id="@+id/subAnnounceText"
-        android:layout_width="100dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:textAlignment="textEnd"
-        android:textColor="@color/colorAccent"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toStartOf="@+id/announceText"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.666" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </android.support.constraint.ConstraintLayout>
