@@ -8,8 +8,8 @@ Feature: User logins
 
 	Examples:
 		| email | password | answer |
-		| kcpm@gmail.com | qwerty | Success |
-		| hoami@gmail.com | hoami | Success |
-		| ecec@gmail.com  | ecec  | Fail    |
+		| kcpm@gmail.com | qwerty | Login success |
+		| hoami@gmail.com | hoami | Login success |
+		| ecec@gmail.com  | ecec  | Login fail    |
 		| | ecc   | Email can not be empty |
 		| ecec@gmail.com | | Password can not be empty |
