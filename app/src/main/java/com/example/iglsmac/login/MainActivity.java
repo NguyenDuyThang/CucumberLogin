@@ -38,6 +38,16 @@ public class MainActivity extends AppCompatActivity {
                 String email = editEmail.getText().toString();
                 String password = editPassword.getText().toString();
 
+                if (email.equals("")) {
+                    announceText.setText("Email can not be empty");
+                    return;
+                }
+
+                if (password.equals("")) {
+                    announceText.setText("Password can not be empty");
+                    return;
+                }
+
                 subAnnounceText.setText("Login ");
                 if(_authorizingAccount(email, password)){
                     announceText.setText("Success");

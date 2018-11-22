@@ -41,33 +41,51 @@ public class MainActivitySteps {
         mActivityRule.getActivity().finish();
     }
 
+    @Given("I enter email and password \"([^\"]*)\" \"([^\"]*)\"$")
+    public  void i_enter_email_and_password(String email, String password) {
+        onView(ViewMatchers.withId(R.id.editEmail)).perform(typeText(email), closeSoftKeyboard());
+        onView(ViewMatchers.withId(R.id.editPassword)).perform(typeText(password), closeSoftKeyboard());
+    }
+
+    @When("I press button login")
+    public void i_press_button_login() {
+        onView(ViewMatchers.withId(R.id.btnLogin)).perform(click());
+    }
+
+    @Then("I should be told \"([^\"]*)\"$")
+    public void i_should_be_told(String expectedAnswer) {
+        TextView announce = (TextView)this.activity.findViewById(R.id.announceText);
+        String result = announce.getText().toString();
+        assertEquals(expectedAnswer, result);
+    }
+
 //    @Given("I have a LoginActivity")
 //    public void I_have_a_LoginActivity() {
 //        if(mActivityRule.getActivity() != null){
 //            assertNotNull(mActivityRule.getActivity());
 //        }
 //    }
-
-    @When("I enter email {string}")
-    public void i_enter_email(String email) {
-        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editEmail)).perform(typeText(email), closeSoftKeyboard());
-    }
-
-    @When("I enter password {string}")
-    public void i_enter_password(String password){
-        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editPassword)).perform(typeText(password), closeSoftKeyboard());
-    }
-
-    @When(("I press button login"))
-    public void i_press_button_login(){
-        onView(ViewMatchers.withId(R.id.btnLogin)).perform(click());
-    }
-
-    @Then("I should be told {string}")
-    public void i_should_be_told(String expectedAnswer){
-        TextView announce = (TextView)this.activity.findViewById(R.id.announceText);
-        String result = announce.getText().toString();
-
-        assertEquals(expectedAnswer, result);
-    }
+//
+//    @When("I enter email {string}")
+//    public void i_enter_email(String email) {
+//        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editEmail)).perform(typeText(email), closeSoftKeyboard());
+//    }
+//
+//    @When("I enter password {string}")
+//    public void i_enter_password(String password){
+//        onView(ViewMatchers.withId(com.example.iglsmac.login.R.id.editPassword)).perform(typeText(password), closeSoftKeyboard());
+//    }
+//
+//    @When(("I press button login"))
+//    public void i_press_button_login(){
+//        onView(ViewMatchers.withId(R.id.btnLogin)).perform(click());
+//    }
+//
+//    @Then("I should be told {string}")
+//    public void i_should_be_told(String expectedAnswer){
+//        TextView announce = (TextView)this.activity.findViewById(R.id.announceText);
+//        String result = announce.getText().toString();
+//
+//        assertEquals(expectedAnswer, result);
+//    }
 }
